@@ -147,5 +147,18 @@ var CardBuilder = function(){
 
     this.Vigilance = function(){
         this.vigilance = true;
+    };
+
+    this.build = function(){
+        var __ctor__ = function(){},
+            keys = Object.keys(this);
+
+        for( var prop in keys ){
+            var property = keys[prop];
+            if(typeof this[property] != "function")
+                __ctor__.prototype[property] = this[property];
+        }
+
+        return __ctor__;
     }
 };

@@ -13,6 +13,9 @@ describe("A CardBuilder", function(){
         .Power(powerToughness)
         .Toughness(powerToughness);
 
+    var runeclawBearCtor = runeclawBear.build(),
+        runeclawBearInstance = new runeclawBearCtor();
+
     it("can make a new CardBuilder", function(){
         expect(typeof new CardBuilder()).toBe('object');
     });
@@ -26,4 +29,9 @@ describe("A CardBuilder", function(){
         expect(runeclawBear.power).toBe(2);
         expect(runeclawBear.toughness).toBe(2);
     });
+
+    it("can make a constructor for a creature", function(){
+        expect(typeof runeclawBearCtor).toBe("function");
+        expect(runeclawBearInstance.name).toBe(name);
+    })
 });
