@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3358a0c-267b-43b2-b96f-21971c598fda" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/BattleField.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/DiceUtil.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/Player.js" />
+    <list id="f3358a0c-267b-43b2-b96f-21971c598fda" name="Default" comment="" />
+    <list default="true" id="105b5024-c1c3-4026-a072-c7bf8708fa6f" name="New changelist" comment="New changelist">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/specs/DiceUtilSpec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/A_CardBuilder_can_make_a_creature_with_power_and_toughness.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/A_CardBuilder_can_make_a_creature_with_power_and_toughness.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/CardBuilder.js" afterPath="$PROJECT_DIR$/source/CardBuilder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/specs/CardBuilderSpec.js" afterPath="$PROJECT_DIR$/specs/CardBuilderSpec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsTestDriver.conf" afterPath="$PROJECT_DIR$/jsTestDriver.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/DiceUtil.js" afterPath="$PROJECT_DIR$/source/DiceUtil.js" />
     </list>
     <ignored path="mtg-card-builder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +68,7 @@
       <file leaf-file-name="jsTestDriver.conf" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsTestDriver.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
+            <state line="8" column="14" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -78,7 +77,7 @@
       <file leaf-file-name="CardBuilderSpec.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/specs/CardBuilderSpec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="10" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
+            <state line="0" column="41" selection-start="0" selection-end="37" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,16 +95,25 @@
       <file leaf-file-name="MagicTheGathering.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/MagicTheGathering.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="4" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+            <state line="26" column="12" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiceUtil.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DiceUtil.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/DiceUtil.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="601" vertical-scroll-proportion="0.0">
+            <state line="37" column="2" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiceUtilSpec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/specs/DiceUtilSpec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="10" selection-start="45" selection-end="45" vertical-scroll-proportion="0.030303031">
               <folding />
             </state>
           </provider>
@@ -146,13 +154,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/jsTestDriver.conf" />
         <option value="$PROJECT_DIR$/specs/CardBuilderSpec.js" />
         <option value="$PROJECT_DIR$/source/CardBuilder.js" />
         <option value="$PROJECT_DIR$/source/BattleField.js" />
         <option value="$PROJECT_DIR$/source/Player.js" />
         <option value="$PROJECT_DIR$/source/MagicTheGathering.js" />
         <option value="$PROJECT_DIR$/source/DiceUtil.js" />
+        <option value="$PROJECT_DIR$/jsTestDriver.conf" />
+        <option value="$PROJECT_DIR$/specs/DiceUtilSpec.js" />
       </list>
     </option>
   </component>
@@ -319,7 +328,19 @@
       <recent name="C:\Users\Derek\IdeaProjects\mtg-card-builder\libs" />
     </key>
   </component>
-  <component name="RunManager" selected="JsTestDriver.A CardBuilder.can make a creature with power and toughness">
+  <component name="RunManager" selected="JsTestDriver.a DiceUtil.can roll a D6 and get a number">
+    <configuration default="false" name="a DiceUtil.can roll hundreds of D6's" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver" temporary="true">
+      <setting name="configLocationType" value="TEST_METHOD" />
+      <setting name="configType" value="FILE_PATH" />
+      <setting name="settingsFile" value="C:\Users\Derek\IdeaProjects\mtg-card-builder\jsTestDriver.conf" />
+      <setting name="jsFile" value="$PROJECT_DIR$/specs/DiceUtilSpec.js" />
+      <setting name="testCase" value="a DiceUtil" />
+      <setting name="testMethod" value="can roll hundreds of D6's" />
+      <setting name="serverType" value="INTERNAL" />
+      <RunnerSettings RunnerId="JsTestDriverClientRunner" />
+      <ConfigurationWrapper RunnerId="JsTestDriverClientRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
@@ -436,9 +457,11 @@
       <ConfigurationWrapper RunnerId="JsTestDriverClientRunner" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JsTestDriver.A CardBuilder" />
       <item index="1" class="java.lang.String" itemvalue="JsTestDriver.A CardBuilder.can make a creature with power and toughness" />
+      <item index="2" class="java.lang.String" itemvalue="JsTestDriver.a DiceUtil.can roll hundreds of D6's" />
+      <item index="3" class="java.lang.String" itemvalue="JsTestDriver.a DiceUtil.can roll a D6 and get a number" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -467,9 +490,11 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f3358a0c-267b-43b2-b96f-21971c598fda" name="Default" comment="" />
+      <changelist id="105b5024-c1c3-4026-a072-c7bf8708fa6f" name="New changelist" comment="" />
       <created>1362100650721</created>
-      <updated>1362100650721</updated>
+      <updated>1362116999256</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -505,19 +530,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32863274" sideWeight="0.9669327" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32863274" sideWeight="0.6704675" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -609,21 +634,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jsTestDriver.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/specs/CardBuilderSpec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="10" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/CardBuilder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="26" selection-start="2899" selection-end="2899" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/BattleField.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="25" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
@@ -640,16 +650,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/specs/CardBuilderSpec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="41" selection-start="0" selection-end="37" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsTestDriver.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/CardBuilder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="26" selection-start="2899" selection-end="2899" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/MagicTheGathering.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+        <state line="26" column="12" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/DiceUtil.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="601" vertical-scroll-proportion="0.0">
+        <state line="37" column="2" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/specs/DiceUtilSpec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="10" selection-start="45" selection-end="45" vertical-scroll-proportion="0.030303031">
           <folding />
         </state>
       </provider>
