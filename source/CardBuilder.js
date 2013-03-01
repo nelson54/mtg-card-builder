@@ -122,6 +122,15 @@ var CardBuilder = function(){
         return this;
     };
 
+    this.Flying = function(){
+        this.flying = true;
+        return this;
+    }
+
+    this.Reach = function(){
+        this.reach = true;
+    }
+
     this.Power = function(power){
         this.power = power;
         return this;
@@ -133,6 +142,10 @@ var CardBuilder = function(){
     };
 
     this.Haste = function(){
-        this.hasSummoningSickness = false;
+        this.haste = false;
     };
+
+    this.Vigilance = function(){
+        this.vigilance = true;
+    }
 };

@@ -14,11 +14,11 @@ describe("A CardBuilder", function(){
         .Toughness(powerToughness);
 
     it("can make a new CardBuilder", function(){
-      expect(typeof new CardBuilder()).toBe('object');
+        expect(typeof new CardBuilder()).toBe('object');
     });
 
     it("can make named card", function(){
-      expect(runeclawBear.name).toBe(name);
+        expect(runeclawBear.name).toBe(name);
     });
 
     it("can make a creature with power and toughness", function(){
