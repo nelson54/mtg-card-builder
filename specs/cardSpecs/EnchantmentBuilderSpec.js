@@ -44,7 +44,7 @@ describe("An Enchantment",function(){
 
     it("can target and attach to a player", function(){
         expect(enchantPlayerWhenTheyDrawACardDrawAnotherCard.isValidTarget(player)).toBeTruthy();
-        enchantPlayerWhenTheyDrawACardDrawAnotherCard.attachEnchantment(player);
+        player.attachEnchantment(enchantPlayerWhenTheyDrawACardDrawAnotherCard);
         expect(player.attachments.length).toEqual(1);
         expect(player.onDrawCardTriggers.length).toEqual(1);
         player.drawCards(1);

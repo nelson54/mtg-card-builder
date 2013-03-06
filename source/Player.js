@@ -23,7 +23,7 @@ var Player = function(game, library, opponants){
 
     this.attachEnchantment = function(enchantment){
         if(enchantment.targets && enchantment.isValidTarget(this)){
-            enchantment.attach(this);
+            enchantment.attachEnchantment(this);
         }
     };
 
