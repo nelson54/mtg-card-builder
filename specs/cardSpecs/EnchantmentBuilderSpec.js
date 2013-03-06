@@ -1,11 +1,11 @@
 describe("An Enchantment",function(){
-    var name = "Curse of Stalked Prey",
+    var name = "Enchant Player When They Draw A Card Draw Another Card",
         type1 = "Aura",
         type2 = "Curse",
-        expansion = "Innistrad";
+        expansion = "MadeUpSet";
 
     var targetStrategy = function(obj){
-        if(obj != undefined && obj instanceof Player)
+        if(obj instanceof Player)
             return true;
         return false;
     };
@@ -14,7 +14,7 @@ describe("An Enchantment",function(){
         if(drawState.count === 1)
             drawState.count = 2;
         return drawState;
-    }
+    };
 
     var attachEnchantment = function(obj){
         obj.attachments.push(this);
@@ -23,7 +23,7 @@ describe("An Enchantment",function(){
         obj.addOnDrawCardTrigger(onDrawCardTrigger);
     };
 
-    var CurseOfStalkedPrey = new CardBuilder()
+    var EnchantPlayerWhenTheyDrawACardDrawAnotherCard = new CardBuilder()
         .Name(name)
         .Expansion(expansion)
         .Enchantment()
@@ -34,17 +34,17 @@ describe("An Enchantment",function(){
         .AttachEnchantmentMethod(attachEnchantment)
         .build();
 
-    var curseOfStalkedPrey = new CurseOfStalkedPrey();
+    var enchantPlayerWhenTheyDrawACardDrawAnotherCard = new EnchantPlayerWhenTheyDrawACardDrawAnotherCard();
 
     var player = new Player(null, [1,2,3,4,5,6,7,8,9,10]);
 
     it("targets", function(){
-        expect(curseOfStalkedPrey.targets).toBeTruthy();
+        expect(enchantPlayerWhenTheyDrawACardDrawAnotherCard.targets).toBeTruthy();
     });
 
     it("can target and attach to a player", function(){
-        expect(curseOfStalkedPrey.isValidTarget(player)).toBeTruthy();
-        curseOfStalkedPrey.attachEnchantment(player);
+        expect(enchantPlayerWhenTheyDrawACardDrawAnotherCard.isValidTarget(player)).toBeTruthy();
+        enchantPlayerWhenTheyDrawACardDrawAnotherCard.attachEnchantment(player);
         expect(player.attachments.length).toEqual(1);
         expect(player.onDrawCardTriggers.length).toEqual(1);
         player.drawCards(1);
