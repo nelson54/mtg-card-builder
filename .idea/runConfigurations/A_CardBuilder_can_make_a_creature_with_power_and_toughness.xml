@@ -3,7 +3,7 @@
     <setting name="configLocationType" value="TEST_METHOD" />
     <setting name="configType" value="FILE_PATH" />
     <setting name="settingsFile" value="C:\Users\dnelson\Desktop\Workspaces\mtg-card-builder\jsTestDriver.conf" />
-    <setting name="jsFile" value="$PROJECT_DIR$/src-test/CardBuilderSpec.js" />
+    <setting name="jsFile" value="$PROJECT_DIR$/specs/CardBuilderSpec.js" />
     <setting name="testCase" value="A CardBuilder" />
     <setting name="testMethod" value="can make a creature with power and toughness" />
     <setting name="serverType" value="INTERNAL" />

@@ -18,21 +18,21 @@ var Battlefield = function(graveyard, exiled){
 
     this.addEntersBattleFieldTrigger = function(trigger){
         this.onEntersBattleFieldTriggers.push(trigger);
-    }
+    };
 
     this.addLeavesBattleFieldTrigger = function(trigger){
         this.onLeavesBattleFieldTriggers.push(trigger);
-    }
+    };
 
     this.addPermanent = function(permanent){
         this.permanentEntersBattlefield(permanent);
         this.permanants.push(permanent);
-    }
+    };
 
     this.destroyPermanent = function(permanent){
         this.permanentLeavesBattlefield(permanent);
         permanents.splice(this.permanents.indexOf(permanent), 1);
-    }
+    };
 
     this._permanentEntersBattlefield = function(permanent){
         if(permanent.onEntersBattleFieldTriggers.length > 0){
@@ -46,7 +46,7 @@ var Battlefield = function(graveyard, exiled){
                 this.onEntersBattleFieldTriggers[oebCardTrigger](permanent, permanent._meta.controller);
             }
         }
-    }
+    };
 
     this._permanentLeavesBattlefield = function(permanent){
         if(permanent.onLeavesBattleFieldTriggers.length > 0){
@@ -60,6 +60,6 @@ var Battlefield = function(graveyard, exiled){
                 this.onLeavesBattleFieldTriggers[olbCardTrigger](permanent, permanent._meta.controller);
             }
         }
-    }
+    };
 
-}
+};
