@@ -1,53 +1,49 @@
 describe("An Enchantment",function(){
-    var name = "Enchant Player When They Draw A Card Draw Another Card",
-        type1 = "Aura",
-        type2 = "Curse",
-        expansion = "MadeUpSet";
-
-    var targetStrategy = function(obj){
-        if(obj instanceof Player)
-            return true;
-        return false;
-    };
 
     var onDrawCardTrigger = function(player, drawState){
-        if(drawState.count === 1)
+        if(drawState.count === 1){
+            player.loseLife(1);
             drawState.count = 2;
+        }
         return drawState;
     };
 
-    var attachEnchantment = function(obj){
-        obj.attachments.push(this);
-        this.controller = obj;
-
-        obj.addOnDrawCardTrigger(onDrawCardTrigger);
-    };
-
-    var EnchantPlayerWhenTheyDrawACardDrawAnotherCard = new CardBuilder()
-        .Name(name)
-        .Expansion(expansion)
+    var EnchantPlayerWhenTheyDrawACardDraw2CardsAndThatPlayerLoses1LifeInstead = new CardBuilder()
+        .Name("Enchant Player When They Draw A Card Draw 2 Cards And Lose 1 Life Instead")
+        .Expansion("Made Up Set")
         .Enchantment()
-        .EnchantmentType(type1)
-        .EnchantmentType(type2)
+        .EnchantmentType("Aura")
+        .EnchantmentType("Curse")
         .Targets()
-        .ValidTargetStrategy(targetStrategy)
-        .AttachEnchantmentMethod(attachEnchantment)
+        .ValidTargetStrategy(function(obj){
+            if(obj instanceof Player)
+                return true;
+            return false;
+        })
+        .AttachEnchantmentMethod(function(obj){
+            obj.attachments.push(this);
+            this.controller = obj;
+
+            obj.addOnDrawCardTrigger(onDrawCardTrigger);
+        })
         .build();
 
-    var enchantPlayerWhenTheyDrawACardDrawAnotherCard = new EnchantPlayerWhenTheyDrawACardDrawAnotherCard();
+    var enchantPlayerWhenTheyDrawACardDraw2CardsAndThatPlayerLoses1LifeInstead = new EnchantPlayerWhenTheyDrawACardDraw2CardsAndThatPlayerLoses1LifeInstead();
 
     var player = new Player(null, [1,2,3,4,5,6,7,8,9,10]);
 
     it("targets", function(){
-        expect(enchantPlayerWhenTheyDrawACardDrawAnotherCard.targets).toBeTruthy();
+        expect(enchantPlayerWhenTheyDrawACardDraw2CardsAndThatPlayerLoses1LifeInstead.targets).toBeTruthy();
     });
 
     it("can target and attach to a player", function(){
-        expect(enchantPlayerWhenTheyDrawACardDrawAnotherCard.isValidTarget(player)).toBeTruthy();
-        player.attachEnchantment(enchantPlayerWhenTheyDrawACardDrawAnotherCard);
+        expect(player.life).toEqual(20);
+        expect(enchantPlayerWhenTheyDrawACardDraw2CardsAndThatPlayerLoses1LifeInstead.isValidTarget(player)).toBeTruthy();
+        player.attachEnchantment(enchantPlayerWhenTheyDrawACardDraw2CardsAndThatPlayerLoses1LifeInstead);
         expect(player.attachments.length).toEqual(1);
         expect(player.onDrawCardTriggers.length).toEqual(1);
         player.drawCards(1);
         expect(player.hand.length).toEqual(2);
+        expect(player.life).toEqual(19);
     });
 });
