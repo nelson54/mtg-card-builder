@@ -35,4 +35,11 @@ describe("A Player", function(){
         expect(player.library.length).toEqual(2);
     });
 
+    it("starts with 20 life and can gain and lose life", function(){
+        expect(player.life).toEqual(20);
+        player.loseLife(5);
+        expect(player.life).toEqual(15);
+        player.gainLife(5);
+        expect(player.life).toEqual(20);
+    });
 });

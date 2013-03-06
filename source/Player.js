@@ -1,5 +1,6 @@
-var Player = function(game, library){
+var Player = function(game, library, opponants){
     this.game = game;
+    this.opponants = opponants;
     this.life = 20;
     this.library = library;
     this.hand = [];
@@ -10,11 +11,27 @@ var Player = function(game, library){
     this.defaultHandSize = 7;
     this.mulligans = 0;
 
+    this.attachments = [];
+
+    this.onGainLifeTriggers = [];
+    this.onLoseLifeTriggers = [];
+    this.onDrawCardTriggers = [];
+
+    this.addOnDrawCardTrigger = function(trigger){
+        this.onDrawCardTriggers.push(trigger);
+    }
+
+    this.attachEnchantment = function(enchantment){
+        if(enchantment.targets && enchantment.isValidTarget(this)){
+            enchantment.attach(this);
+        }
+    };
+
     this.drawHandForGame = function(){
         this.drawCards(this.defaultHandSize - this.mulligans);
     };
 
-    this.takeDamage = function(damage){
+    this.loseLife = function(damage){
         this.life -= damage;
     };
 
@@ -35,9 +52,15 @@ var Player = function(game, library){
     };
 
     this.drawCards = function(count){
-        while(count !== 0){
+        var drawState = {count : count};
+
+        for(var trigger in this.onDrawCardTriggers){
+            drawState = this.onDrawCardTriggers[trigger](this, drawState);
+        }
+
+        while(drawState.count !== 0){
             this.drawCard();
-            count -= 1;
+            drawState.count -= 1;
         }
     };
 

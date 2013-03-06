@@ -1,4 +1,4 @@
-describe("A CardBuilder", function(){
+describe("A creature", function(){
 
     var name = "Runeclaw Bear",
         type = "Bear",
@@ -33,5 +33,7 @@ describe("A CardBuilder", function(){
     it("can make a constructor for a creature", function(){
         expect(typeof runeclawBearCtor).toBe("function");
         expect(runeclawBearInstance.name).toBe(name);
-    })
+    });
+
+
 });

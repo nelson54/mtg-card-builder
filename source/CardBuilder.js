@@ -14,6 +14,8 @@ var CardBuilder = function(){
     this.isLegendary = false;
     this.hasFlash = false;
 
+    this.methods = {};
+
     this.FlavorText = function(text){
         this.flavorText = text;
     };
@@ -114,6 +116,47 @@ var CardBuilder = function(){
         return this;
     };
 
+    //  Enchantments
+    this.Enchantment = function(){
+        this.types.push("enchantment");
+
+        this.enchantmentTypes = [];
+
+        return this;
+    };
+
+    this.EnchantmentType = function(type){
+        this.enchantmentTypes.push(type);
+
+        return this;
+    };
+
+    this.Targets = function(){
+        this.targets = true;
+
+        return this;
+    };
+
+    this.ValidTargetStrategy = function(func){
+        if(typeof func === "function"){
+            this.methods["isValidTarget"] = func;
+        }
+        else
+            throw "The ValidTargetStrategy must be a function.";
+
+        return this;
+    };
+
+    this.AttachEnchantmentMethod = function(func){
+        if(typeof func === "function"){
+            this.methods["attachEnchantment"] = func;
+        }
+        else
+            throw "The AttachEnchantmentMethod must be a function.";
+
+        return this;
+    };
+
     //  Creatures
     this.CreatureType = function(type){
         if(this.creatureTypes instanceof Array == false)
@@ -157,6 +200,10 @@ var CardBuilder = function(){
             var property = keys[prop];
             if(typeof this[property] != "function")
                 __ctor__.prototype[property] = this[property];
+        }
+
+        for( var method in this.methods ){
+            __ctor__.prototype[method] = this.methods[method];
         }
 
         return __ctor__;

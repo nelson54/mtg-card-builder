@@ -61,5 +61,4 @@ var Battlefield = function(graveyard, exiled){
             }
         }
     };
-
 };
