@@ -11,7 +11,7 @@ describe("An Aura Curse",function(){
     it("can target and attach to a player", function(){
         expect(player.life).toEqual(20);
         expect(drawCardLoseLifeEnchantment.isValidTarget(player)).toBeTruthy();
-        player.attachEnchantment(drawCardLoseLifeEnchantment);
+        player.addAttachment(drawCardLoseLifeEnchantment);
         expect(player.attachments.length).toEqual(1);
         expect(player.onDrawCardTriggers.length).toEqual(1);
         player.drawCards(1);
@@ -30,8 +30,10 @@ describe('A Aura that attaches to creatures', function(){
     runeclawBear.controller = player;
 
     it("can be attached to a creature", function(){
-        stabWound.attachEnchantment(runeclawBear);
-        expect(runeclawBear.attachments).toEqual(1);
+        runeclawBear.addAttachment(stabWound);
+        expect(runeclawBear.attachments.length).toEqual(1);
+        expect(runeclawBear.getPower()).toEqual(0)
+        expect(runeclawBear.getPower()).toEqual(0)
     });
 
 

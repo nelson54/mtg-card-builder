@@ -23,9 +23,9 @@ var Player = function(game, library, opponents){
         this.onDrawCardTriggers.push(trigger);
     };
 
-    this.addAttachment = function(enchantment){
-        if(enchantment.targets && enchantment.isValidTarget(this)){
-            enchantment.attachEnchantment(this);
+    this.addAttachment = function(attachment){
+        if(attachment.targets && attachment.isValidTarget(this)){
+            attachment.attach(this);
         }
     };
 

@@ -36,10 +36,11 @@ var CardBuilder = function(){
         this.hasFlash = true;
     };
 
+    this.attachments = [];
 
-    this.methods["addAttachment"] = function(enchantment){
-        if(enchantment.targets && enchantment.isValidTarget(this)){
-            enchantment.attachEnchantment(this);
+    this.methods["addAttachment"] = function(attachment){
+        if(attachment.targets && attachment.isValidTarget(this)){
+            attachment.attach(this);
         }
     };
 
@@ -82,7 +83,7 @@ var CardBuilder = function(){
         this.methods["getPowerToughness"] = function(){
             var powerToughness = { power: this.power, toughness: this.toughness };
 
-            if( this.powerToughnessModifiers > 0){
+            if( this.powerToughnessModifiers.length > 0){
                 for (var ptModIndex in this.powerToughnessModifiers){
                     powerToughness = this.powerToughnessModifiers[ptModIndex](powerToughness);
                 }
@@ -90,6 +91,14 @@ var CardBuilder = function(){
 
             return powerToughness;
         };
+
+        this.methods["getPower"] = function(){
+            return this.getPowerToughness().power;
+        }
+
+        this.methods["getToughness"] = function(){
+            return this.getPowerToughness().toughness;
+        }
 
         this.hasSummoningSickness = true;
 
@@ -175,12 +184,12 @@ var CardBuilder = function(){
         return this;
     };
 
-    this.AttachEnchantmentMethod = function(func){
+    this.AttachMethod = function(func){
         if(typeof func === "function"){
-            this.methods["attachEnchantment"] = func;
+            this.methods["attach"] = func;
         }
         else
-            throw "The AttachEnchantmentMethod must be a function.";
+            throw "The AttachMethod must be a function.";
 
         return this;
     };

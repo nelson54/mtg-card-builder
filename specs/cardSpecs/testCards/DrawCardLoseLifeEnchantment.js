@@ -10,7 +10,7 @@ var DrawCardLoseLifeEnchantment = new CardBuilder()
             return true;
         return false;
     })
-    .AttachEnchantmentMethod(function(obj){
+    .AttachMethod(function(obj){
         obj.attachments.push(this);
         this.controller = obj;
 

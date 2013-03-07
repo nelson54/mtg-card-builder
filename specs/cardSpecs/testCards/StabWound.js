@@ -9,8 +9,8 @@ var StabWound = new CardBuilder()
             return true;
         return false;
     })
-    .AttachEnchantmentMethod(function(obj){
-        obj.addAttachment(this);
+    .AttachMethod(function(obj){
+        obj.attachments.push(this);
         this.controller = obj.controller;
 
         obj.controller.game.addAddUpkeepTrigger(function(game){
