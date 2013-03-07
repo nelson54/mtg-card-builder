@@ -1,8 +1,8 @@
-var Player = function(game, library, opponants){
+var Player = function(game, library, opponents){
     this.game = game;
-    this.opponants = opponants;
+    this.opponents = opponents;
     this.life = 20;
-    this.library = library;
+    this.library = library.map(function(card){ return card.uniqueId = _.uniqueId("card_")});
     this.hand = [];
     this.graveyard = [];
     this.battlefield = [];
@@ -10,6 +10,8 @@ var Player = function(game, library, opponants){
 
     this.defaultHandSize = 7;
     this.mulligans = 0;
+
+    this.manaPool = [];
 
     this.attachments = [];
 
@@ -19,9 +21,9 @@ var Player = function(game, library, opponants){
 
     this.addOnDrawCardTrigger = function(trigger){
         this.onDrawCardTriggers.push(trigger);
-    }
+    };
 
-    this.attachEnchantment = function(enchantment){
+    this.addAttachment = function(enchantment){
         if(enchantment.targets && enchantment.isValidTarget(this)){
             enchantment.attachEnchantment(this);
         }

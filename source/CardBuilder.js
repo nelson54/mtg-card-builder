@@ -37,6 +37,12 @@ var CardBuilder = function(){
     };
 
 
+    this.methods["addAttachment"] = function(enchantment){
+        if(enchantment.targets && enchantment.isValidTarget(this)){
+            enchantment.attachEnchantment(this);
+        }
+    };
+
     //  Types
     this.Enchantment = function(){
         this.types.push("enchantment");
@@ -62,6 +68,28 @@ var CardBuilder = function(){
         this.types.push("creature");
 
         this.creatureTypes = [];
+
+        this.power = 0;
+
+        this.toughness = 0;
+
+        this.powerToughnessModifiers = [];
+
+        this.methods["addPowerToughnessModifier"] = function(modifier){
+            this.powerToughnessModifiers.push(modifier);
+        };
+
+        this.methods["getPowerToughness"] = function(){
+            var powerToughness = { power: this.power, toughness: this.toughness };
+
+            if( this.powerToughnessModifiers > 0){
+                for (var ptModIndex in this.powerToughnessModifiers){
+                    powerToughness = this.powerToughnessModifiers[ptModIndex](powerToughness);
+                }
+            }
+
+            return powerToughness;
+        };
 
         this.hasSummoningSickness = true;
 

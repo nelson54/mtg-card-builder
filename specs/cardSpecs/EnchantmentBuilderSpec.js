@@ -1,53 +1,40 @@
-describe("An Enchantment",function(){
-    var name = "Enchant Player When They Draw A Card Draw Another Card",
-        type1 = "Aura",
-        type2 = "Curse",
-        expansion = "MadeUpSet";
+describe("An Aura Curse",function(){
 
-    var targetStrategy = function(obj){
-        if(obj instanceof Player)
-            return true;
-        return false;
-    };
-
-    var onDrawCardTrigger = function(player, drawState){
-        if(drawState.count === 1)
-            drawState.count = 2;
-        return drawState;
-    };
-
-    var attachEnchantment = function(obj){
-        obj.attachments.push(this);
-        this.controller = obj;
-
-        obj.addOnDrawCardTrigger(onDrawCardTrigger);
-    };
-
-    var EnchantPlayerWhenTheyDrawACardDrawAnotherCard = new CardBuilder()
-        .Name(name)
-        .Expansion(expansion)
-        .Enchantment()
-        .EnchantmentType(type1)
-        .EnchantmentType(type2)
-        .Targets()
-        .ValidTargetStrategy(targetStrategy)
-        .AttachEnchantmentMethod(attachEnchantment)
-        .build();
-
-    var enchantPlayerWhenTheyDrawACardDrawAnotherCard = new EnchantPlayerWhenTheyDrawACardDrawAnotherCard();
+    var drawCardLoseLifeEnchantment = new DrawCardLoseLifeEnchantment();
 
     var player = new Player(null, [1,2,3,4,5,6,7,8,9,10]);
 
     it("targets", function(){
-        expect(enchantPlayerWhenTheyDrawACardDrawAnotherCard.targets).toBeTruthy();
+        expect(drawCardLoseLifeEnchantment.targets).toBeTruthy();
     });
 
     it("can target and attach to a player", function(){
-        expect(enchantPlayerWhenTheyDrawACardDrawAnotherCard.isValidTarget(player)).toBeTruthy();
-        player.attachEnchantment(enchantPlayerWhenTheyDrawACardDrawAnotherCard);
+        expect(player.life).toEqual(20);
+        expect(drawCardLoseLifeEnchantment.isValidTarget(player)).toBeTruthy();
+        player.attachEnchantment(drawCardLoseLifeEnchantment);
         expect(player.attachments.length).toEqual(1);
         expect(player.onDrawCardTriggers.length).toEqual(1);
         player.drawCards(1);
         expect(player.hand.length).toEqual(2);
+        expect(player.life).toEqual(19);
     });
+});
+
+describe('A Aura that attaches to creatures', function(){
+
+    var game = {addAddUpkeepTrigger : function(){}},
+        player = new Player(game, [1,2,3,4,5,6,7,8]),
+        runeclawBear = new RuneclawBear(),
+        stabWound = new StabWound();
+
+    runeclawBear.controller = player;
+
+    it("can be attached to a creature", function(){
+        stabWound.attachEnchantment(runeclawBear);
+        expect(runeclawBear.attachments).toEqual(1);
+    });
+
+
+
+
 });
